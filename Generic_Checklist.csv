@@ -1,0 +1,11 @@
+#,Checklist Item,Standard & Best Practice
+1,Separation of Concerns (SRP),"Does the component only handle UI and presentation logic? Is all business logic, data fetching, and data manipulation delegated to services? (Components should be lean.)"
+2,Naming Conventions,"Do file names use lowercase kebab-case (e.g., user-profile.component.ts)? Do class and symbol names follow the [Feature].[Type] pattern and use the correct suffix (e.g., UserProfileService, UserListComponent)?"
+3,Template Cleanliness (No Logic),"Are templates declarative? Is complex logic (chained conditions, complex arithmetic, API calls, or lengthy function calls) avoided and instead moved into the component class, pipes, or child components?"
+4,RxJS and Memory Management,"Are all Observables used in the template via the async pipe? For manually subscribed Observables, is an explicit unsubscribe mechanism (e.g., takeUntil, take(1), or ngOnDestroy) in place to prevent memory leaks?"
+5,TypeScript Type Safety,"Is the any type avoided for variables, function arguments, and return values? Are interfaces or types used to define consistent data structures? Is strict mode enabled in tsconfig.json?"
+6,Immutability & Change Detection,"Are ChangeDetectionStrategy.OnPush used for presentational components? Are arrays and objects treated as immutable? When updating data, are new references created instead of modifying existing objects/arrays in place?"
+7,Performance Optimizations,"Is the trackBy function used with all *ngFor loops, especially for large lists, to prevent unnecessary DOM manipulation? Are heavy DOM elements hidden using *ngIf instead of just CSS display: none?"
+8,Code Structure & DRY,"Is the code DRY (Don't Repeat Yourself)? Is duplicated logic extracted into reusable services or utility functions? Do folder structures group files logically by feature instead of by type (e.g., no single services or components dumping ground)?"
+9,Function and Line Limits,"Are component methods and functions small and purposeful? Are files and functions kept below reasonable size limits (e.g., under 400 lines for a file, under 75 lines for a function)?"
+10,Dependency Injection Scope,"Are feature-specific services provided in lazy-loaded modules/components, and are app-wide singletons declared with providedIn: 'root' to ensure efficient bundle size and proper scope?"
